@@ -12,11 +12,11 @@ var generateBtn = document.querySelector("#generate");
 // THEN the password is either displayed in an alert or written to the page
 
 function generatePassword() {
-    var password = "password";
+    var password = "";
     var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
     var upperCharSet = lowerCharSet.toUpperCase();
     var numberCharSet = "0123456789";
-    var specialCharSet = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    var specialCharSet = "!#$%&'()*+,-./\":;<=>?@][^_`{|}~";
 
     // WHEN prompted for the length of the password
     // THEN I choose a length of at least 8 characters and no more than 128 characters
@@ -29,16 +29,33 @@ function generatePassword() {
     // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
     // WHEN I answer each prompt
     // THEN my input should be validated and at least one character type should be selected
-    var lowerCase = confirm("Do you need lowercase characters?");
-        // if (lowerCase === true) {
-        //     for (var i = 0; i <= length; i++) {
-        //         var randomPassword = Math.floor(Math.random() * )
-        //     }
-        // }
 
+
+    var lowerCase = confirm("Do you need lowercase characters?");
+        if (lowerCase) {
+            var passList = lowerCharSet;
+        } else {
+            var passList = "";
+        }
     var upperCase = confirm("Do you need uppercase characters?");
-    var numberic = confirm("Do you need numeric characters?");
-    var specialChar = confirm("Do you need special characters?");
+        if (upperCase && lowerCase) {
+            var passList = lowerCharSet + upperCharSet;
+        } else if (upperCase && !lowerCase) {
+            var passList = upperCharSet;
+        }
+    
+    for (var i = 0; i < length; i++) {
+        var randomPassword = Math.floor(Math.random() * passList.length);
+        password += passList.substring(randomPassword, randomPassword +1);
+    }
+
+    
+    
+    
+    
+    
+    // var numberic = confirm("Do you need numeric characters?");
+    // var specialChar = confirm("Do you need special characters?");
 
 
     return password;
