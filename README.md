@@ -4,12 +4,12 @@
 
 A random password generator that allows users to set password parameters through prompts.  
 
-## [Try it yourself!](https://bfeliz.github.io/check-weather-app/)
+## [Try it yourself!](https://maestroluu.github.io/JavaScript-Random-Password-Generator/)
 
 The following images show a glimpse of the application:
 
-![without favorites](assets/images/screenShot1.png)
-![with favorites](assets/images/screenShot2.png)
+![before](./assets/image/PW1.png)
+![after](./assets/image/PW2.png)
 
 ## Getting Started
 
