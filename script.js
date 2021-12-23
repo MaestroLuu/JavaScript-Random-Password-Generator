@@ -3,32 +3,45 @@ var generateBtn = document.querySelector("#generate");
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
+
+
+
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 
 function generatePassword() {
-  var password = "password";
-  // TODO: add code to generate the password here
-  var length = prompt("How many characters do you need in your password?"); 
-    while (length < 8 || length > 128) {
-      alert("Your password minimum has to be at least 8 characters and no more than 128 characters.");
-      length = prompt("How many characters do you need in your password?");
-    }
-  
+    var password = "password";
+    var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
+    var upperCharSet = lowerCharSet.toUpperCase();
+    var numberCharSet = "0123456789";
+    var specialCharSet = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
-  
+    // WHEN prompted for the length of the password
+    // THEN I choose a length of at least 8 characters and no more than 128 characters
+    var length = prompt("How many characters do you need in your password?"); 
+        while (length < 8 || length > 128) {
+            alert("Your password minimum has to be at least 8 characters and no more than 128 characters.");
+            length = prompt("How many characters do you need in your password?");
+        }
+    // WHEN asked for character types to include in the password
+    // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+    // WHEN I answer each prompt
+    // THEN my input should be validated and at least one character type should be selected
+    var lowerCase = confirm("Do you need lowercase characters?");
+        // if (lowerCase === true) {
+        //     for (var i = 0; i <= length; i++) {
+        //         var randomPassword = Math.floor(Math.random() * )
+        //     }
+        // }
 
-  var lowerCase = prompt()
+    var upperCase = confirm("Do you need uppercase characters?");
+    var numberic = confirm("Do you need numeric characters?");
+    var specialChar = confirm("Do you need special characters?");
 
-  return password;
+
+    return password;
 }
 
 // Write password to the #password input
