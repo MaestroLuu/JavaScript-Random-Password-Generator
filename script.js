@@ -6,10 +6,10 @@ function generatePassword() {
     var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
     var upperCharSet = lowerCharSet.toUpperCase();
     var numberCharSet = "0123456789";
-    var specialCharSet = "!#$%&'()*+,-./\":;<=>?@][^_`{|}~";
+    var specialCharSet = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
 
     var length = prompt("How many characters do you need in your password?"); 
-    while (length < 8 || length > 128) {
+    while (length < 8 || length > 128 || isNaN(length)) {
         alert("Your password minimum has to be at least 8 characters and no more than 128 characters.");
         length = prompt("How many characters do you need in your password?");
     }
