@@ -13,6 +13,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
     var password = "";
+    var passList = "";
     var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
     var upperCharSet = lowerCharSet.toUpperCase();
     var numberCharSet = "0123456789";
@@ -33,31 +34,26 @@ function generatePassword() {
 
     var lowerCase = confirm("Do you need lowercase characters?");
         if (lowerCase) {
-            var passList = lowerCharSet;
-        } else {
-            var passList = "";
-        }
+            passList += lowerCharSet;
+        } 
     var upperCase = confirm("Do you need uppercase characters?");
-        if (upperCase && lowerCase) {
-            var passList = lowerCharSet + upperCharSet;
-        } else if (upperCase && !lowerCase) {
-            var passList = upperCharSet;
+        if (upperCase) {
+            passList += upperCharSet;
+        }
+    var numbers = confirm("Do you need numeric characters?");
+        if (numbers) {
+            passList += numberCharSet;
+        }
+    var specialChar = confirm("Do you need special characters?");
+        if (specialChar) {
+            passList += specialCharSet;
         }
     
     for (var i = 0; i < length; i++) {
         var randomPassword = Math.floor(Math.random() * passList.length);
         password += passList.substring(randomPassword, randomPassword +1);
     }
-
     
-    
-    
-    
-    
-    // var numberic = confirm("Do you need numeric characters?");
-    // var specialChar = confirm("Do you need special characters?");
-
-
     return password;
 }
 
